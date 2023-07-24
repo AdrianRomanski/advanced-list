@@ -1,0 +1,8 @@
+<div class="list-sort">
+  <h4>Sort</h4>
+  <mat-radio-group *ngIf=" (listSort$| async) as listSort"
+                   aria-label="Select Sorting" (change)="onToggle($event)">
+    <mat-radio-button [checked]="listSort.ascending"  value="true">asc</mat-radio-button>
+    <mat-radio-button [checked]="!listSort.ascending" value="false">desc</mat-radio-button>
+  </mat-radio-group>
+</div>

@@ -1,0 +1,9 @@
+<div class="list-filter" *ngIf="brandFilters.length > 0">
+  <h4>Filter by Brands</h4>
+  <mat-button-toggle-group *ngIf="!loading else spinner" (change)="onButtonToggled($event)" name="filterBrands" aria-label="Filter By Brands" multiple>
+    <mat-button-toggle *ngFor="let filter of brandFilters" [value]="filter.addressIds">{{filter.name}}</mat-button-toggle>
+  </mat-button-toggle-group>
+  <ng-template #spinner>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

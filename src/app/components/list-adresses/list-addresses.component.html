@@ -1,0 +1,20 @@
+<div>
+  <h4>Addresses</h4>
+  <div *ngIf="!loading else spinner">
+    <div class="list-addresses" *ngIf="addresses.length > 0 else empty">
+      <div *ngFor="let address of addresses">
+        <span>{{address.id}}</span>
+        <span>{{address.zip}}</span>
+        <span>{{address.street}}</span>
+        <span>{{address.city}}</span>
+        <button (click)="onDeleteClicked(address.id)" mat-raised-button color="accent">X</button>
+      </div>
+    </div>
+    <ng-template #empty>
+      No addresses found
+    </ng-template>
+  </div>
+  <ng-template #spinner>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

@@ -1,0 +1,14 @@
+<app-list-filter
+  [brandFilters]="(brandFilters$ | async) || []"
+  [loading]="!!(loadingBrands$ | async)"
+  (brandClicked)="changeFilteredBrands($event)"
+  >
+</app-list-filter>
+<app-list-sort
+  (sortChangeClicked)="changeSort($event)">
+</app-list-sort>
+<app-list-addresses
+  [addresses]="(filteredAndSortedAddresses$ | async) || []"
+  [loading]="!!(loadingAddresses$ | async)"
+  (deleteClicked)="deleteAddress($event)">
+</app-list-addresses>
